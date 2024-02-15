@@ -1,6 +1,7 @@
 using Finbuckle.MultiTenant;
 using FSH.WebApi.Application.Common.Events;
 using FSH.WebApi.Application.Common.Interfaces;
+using FSH.WebApi.Domain.ATS;
 using FSH.WebApi.Domain.Catalog;
 using FSH.WebApi.Infrastructure.Persistence.Configuration;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,9 @@ public class ApplicationDbContext : BaseDbContext
 
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Brand> Brands => Set<Brand>();
+    public DbSet<CustomerModel> Customers => Set<CustomerModel>();
+    public DbSet<CustomerProductModel> CustomerProduct => Set<CustomerProductModel>();
+    public DbSet<NotesModel> Notes => Set<NotesModel>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

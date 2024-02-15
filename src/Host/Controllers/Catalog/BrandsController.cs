@@ -1,5 +1,5 @@
 ﻿using FSH.WebApi.Application.Catalog.Brands;
-
+ 
 namespace FSH.WebApi.Host.Controllers.Catalog;
 
 public class BrandsController : VersionedApiController
@@ -15,7 +15,7 @@ public class BrandsController : VersionedApiController
     [HttpGet("{id:guid}")]
     [MustHavePermission(FSHAction.View, FSHResource.Brands)]
     [OpenApiOperation("Get brand details.", "")]
-    public Task<BrandDto> GetAsync(Guid id)
+    public Task<BrandDto> GetAsync(Guid id) 
     {
         return Mediator.Send(new GetBrandRequest(id));
     }
